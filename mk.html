@@ -1,0 +1,239 @@
+<!doctype html>
+
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>日本刀鑑賞基本情報ジェネレーター</title>
+    <meta id="description" content="日本刀鑑賞基本情報ジェネレーター">
+    <meta id="author" content="しの">
+    <script src="js/generator.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.16/clipboard.min.js"></script>
+    <link href="css/Skeleton/normalize.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/Skeleton/skeleton.css" rel="stylesheet" type="text/css" media="all">
+    <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet">
+    <link href="css/generator.css" rel="stylesheet" type="text/css" media="all">
+</head>
+
+<body>
+    <h1 class="wf-sawarabimincho">日本刀鑑賞情報ジェネレーターβ</h1>
+    <div id="form">
+        <button type="button" id="clear">クリア</button>
+        <label>鑑賞日
+            <input type="date" id="date">
+        </label>
+        <label>施設名
+            <input type="text" id="place">
+        </label>
+        <label>番号
+            <input type="number" id="no" class="number">
+        </label>
+        <label>刀派
+            <input type="text" id="touha">
+        </label>
+        <label>刀工
+            <input type="text" id="toukou">
+        </label>
+        <label>銘
+            <input type="text" id="mei">
+        </label>
+        <label>時代
+            <select id="age">
+                <option value="平安">平安</option>
+                <option value="鎌倉">鎌倉</option>
+                <option value="南北朝">南北朝</option>
+                <option value="室町">室町</option>
+                <option value="安土桃山">安土桃山</option>
+                <option value="江戸">江戸</option>
+                <option value="明治">明治</option>
+                <option value="大正">大正</option>
+                <option value="昭和">昭和</option>
+                <option value="平成">平成</option>
+            </select>
+        </label>
+        <label for="part_no">
+            <input type="radio" name="part" id="part_no" value="" checked> 指定なし
+        </label>
+        <label for="part_p">
+            <input type="radio" name="part" id="part_p" value="前期"> 前期
+        </label>
+        <label for="part_m">
+            <input type="radio" name="part" id="part_m" value="中期"> 中期
+        </label>
+        <label for="part_e">
+            <input type="radio" name="part" id="part_e" value="後期"> 後期
+        </label>
+        <br>
+        <label>種類
+            <select id="kind">
+                <option value="">-</option>
+                <option value="短刀">短刀</option>
+                <option value="脇差">脇差</option>
+                <option value="刀">刀</option>
+                <option value="太刀">太刀</option>
+                <option value="大太刀">大太刀</option>
+                <option value="薙刀">薙刀</option>
+                <option value="槍">槍</option>
+            </select>
+        </label>
+        <div class="switch">
+            <input id="switch" checked type="checkbox" value="on">
+            <label for="switch"></label>
+        </div>
+        <div id="cm">
+            <label>刃長
+                <input type="number" step="0.1" id="hatyou" class="number">cm
+            </label>
+            <label>全長
+                <input type="number" step="0.1" id="zentyou" class="number">cm
+            </label>
+            <label>反り
+                <input type="number" step="0.1" id="sori" class="number">cm
+            </label>
+        </div>
+        <div id="syaku">
+            <label>刃長
+                <input type="number" step="0" id="hatyou_syaku" class="number">尺
+                <input type="number" step="0" id="hatyou_sun" class="number">寸
+                <input type="number" step="0" id="hatyou_bu" class="number">分
+            </label>
+            <label>全長
+                <input type="number" step="0" id="zentyou_syaku" class="number">尺
+                <input type="number" step="0" id="zentyou_sun" class="number">寸
+                <input type="number" step="0" id="zentyou_bu" class="number">分
+            </label>
+            <label>反り
+                <input type="number" step="0" id="sori_syaku" class="number">尺
+                <input type="number" step="0" id="sori_sun" class="number">寸
+                <input type="number" step="0" id="sori_bu" class="number">分
+            </label>
+        </div>
+        <label>茎
+            <select id="nakago">
+                <option value="">-</option>
+                <option value="栗尻">栗尻</option>
+                <option value="刃上がり栗尻">刃上がり栗尻</option>
+                <option value="切り（一文字）">切り（一文字）</option>
+                <option value="入山型">入山型</option>
+                <option value="剣形">剣形</option>
+                <option value="振袖型">振袖型</option>
+                <option value="船形">船形</option>
+                <option value="たなご腹形">たなご腹形</option>
+                <option value="雉子股形">雉子股形</option>
+                <option value="御幣形">御幣形</option>
+                <option value="卒塔婆形">卒塔婆形</option>
+            </select>
+        </label>
+        <label>磨上
+            <select id="suriage">
+                <option value="">-</option>
+                <option value="磨上">磨上</option>
+                <option value="大磨上">大磨上</option>
+                <option value="生ぶ">生ぶ</option>
+                <option value="折り返し銘">折り返し銘</option>
+                <option value="額銘">額銘</option>
+            </select>
+        </label>
+        <label>目釘孔
+            <input type="number" id="mekugi" class="number">
+        </label>
+        <label>切っ先
+            <select id="kissaki">
+                <option value="">-</option>
+                <option value="小切っ先">小切っ先</option>
+                <option value="中切っ先">中切っ先</option>
+                <option value="大切っ先">大切っ先</option>
+                <option value="猪首切っ先">猪首切っ先</option>
+            </select>
+        </label>
+        <label>地鉄
+            <select id="zigane">
+                <option value="">-</option>
+                <option value="板目">板目</option>
+                <option value="小板目">小板目</option>
+                <option value="杢目">杢目</option>
+                <option value="柾目">柾目</option>
+                <option value="綾杉">綾杉</option>
+                <option value="小糠">小糠</option>
+                <option value="松皮">松皮</option>
+                <option value="八雲">八雲</option>
+                <option value="縮緬">縮緬</option>
+            </select>
+        </label>
+        <label>帽子
+            <select id="bousi">
+                <option value="">-</option>
+                <option value="大丸">大丸</option>
+                <option value="小丸">小丸</option>
+                <option value="尖り">尖り</option>
+                <option value="火焔">火焔</option>
+                <option value="掃掛">掃掛</option>
+                <option value="焼詰">焼詰</option>
+                <option value="地蔵">地蔵</option>
+                <option value="一枚">一枚</option>
+            </select>
+        </label>
+        <label>刃文</label>
+        <label>
+            <input type="checkbox" id="hamon_notare" value="のたれ">のたれ</label>
+        <label>
+            <input type="checkbox" id="hamon_suguha" value="直刃">直刃</label>
+        <label>
+            <input type="checkbox" id="hamon_gonome" value="互の目">互の目</label>
+        <label>
+            <input type="checkbox" id="hamon_tyouzi" value="丁子">丁子</label>
+        <label>
+            <input type="checkbox" id="hamon_hitutare" value="皆焼">皆焼</label>
+
+        <button type="button" id="go">実行</button>
+        <button type="button" id="clear">クリア</button>
+    </div>
+    <hr>
+    <div id="result">
+        <textarea id="resultData" rows="14" cols="50">結果がここに出力されます。</textarea>
+        <br>
+        <button id="getResultData" type="button" class="getBtn" data-clipboard-target="#resultData">結果をコピーする</button>
+        <br>
+        <div>※多分iphoneでは動作しません</div>
+
+    </div>
+    <hr>
+    <h2>日本刀鑑賞情報ジェネレーターβについて</h2>
+    <h3>これ何</h3>
+    <p>日本刀を見に行ったときの記録をしたいけれど、細々書くのが面倒な人用の基本情報ジェネレータです。
+        <br> スマートフォンで使用し、メモアプリやお絵かき用アプリに貼り付けて加筆することを前提に作成しています。
+    </p>
+    <h3>作ったの誰</h3>
+    <p>しの(<a href="https://twitter.com/sbsn_">@sbsn_</a>)と申します。
+        <br> ツイッターで日本刀の展示の情報をまとめたりしている。
+    </p>
+    <h3>バグっぽい</h3>
+    <p>しの(<a href="https://twitter.com/sbsn_">@sbsn_</a>)にまでご一報ください。
+        <br> また、改善案がございましたら同じくご連絡いただければ幸いです。
+    </p>
+    <h3>今後の予定は</h3>
+    <ul>
+        <li>生成時の不要項目の設定を可能にする</li>
+        <li>レスポンシブデザインでレイアウト何とかする</li>
+        <li>CSV形式生成</li>
+    </ul>
+
+    <h3>免責事項</h3>
+    <h4>総則</h4>
+    <p>
+        当ページは無料で提供されています。
+        <br> 当サービスの御利用につき、何らかのトラブルや損失・損害等につきましては一切責任を問わないものとします。
+        <br> また、ページのコードの一部を使用し不利益が生じた際にも一切責任を問わないものとします。
+    </p>
+    <h4>著作権について</h4>
+    <p>
+        当ページの複製を禁じます。
+        <br> 当サービスを使用し、生成した文字列につきましてはご自由にご利用ください。
+    </p>
+
+
+</body>
+
+</html>
