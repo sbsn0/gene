@@ -5,6 +5,14 @@ body {
     color: #222;
 }
 
+.kaisou {
+    margin-left: 20px;
+}
+
+.part {
+    margin-left: 60px;
+}
+
 .wf-sawarabimincho {
     font-family: "Sawarabi Mincho";
 }
@@ -59,4 +67,13 @@ body {
 
 .switch input:checked + label:hover:after {
     opacity: 0.5;
+}
+
+input[type="number"][disabled],
+select[disabled],
+input[type="date"][disabled],
+input[type="checkbox"][disabled],
+input[type="radio"][disabled],
+input[type="text"][disabled] {
+    background: #DCDCDC;
 }

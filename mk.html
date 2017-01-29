@@ -21,25 +21,34 @@
     <h1 class="wf-sawarabimincho">日本刀鑑賞情報ジェネレーターβ</h1>
     <div id="form">
         <button type="button" id="clear">クリア</button>
-        <label>鑑賞日
+        <br>
+        <div>項目を使用しない場合は各項目のチェックボックスにチェックを入れてください。</div>
+        <label>
+            <input type="checkbox" id="noDate"> 鑑賞日
             <input type="date" id="date">
         </label>
-        <label>施設名
+        <label>
+            <input type="checkbox" id="noPlace"> 施設名
             <input type="text" id="place">
         </label>
-        <label>番号
+        <label>
+            <input type="checkbox" id="noNo"> 番号
             <input type="number" id="no" class="number">
         </label>
-        <label>刀派
+        <label>
+            <input type="checkbox" id="noTouha"> 刀派
             <input type="text" id="touha">
         </label>
-        <label>刀工
+        <label>
+            <input type="checkbox" id="noToukou"> 刀工
             <input type="text" id="toukou">
         </label>
-        <label>銘
+        <label>
+            <input type="checkbox" id="noMei"> 銘
             <input type="text" id="mei">
         </label>
-        <label>時代
+        <label>
+            <input type="checkbox" id="noAge"> 時代
             <select id="age">
                 <option value="平安">平安</option>
                 <option value="鎌倉">鎌倉</option>
@@ -54,19 +63,20 @@
             </select>
         </label>
         <label for="part_no">
-            <input type="radio" name="part" id="part_no" value="" checked> 指定なし
+            <input type="radio" name="part" id="part_no" value="" checked class="part"> 指定なし
         </label>
         <label for="part_p">
-            <input type="radio" name="part" id="part_p" value="前期"> 前期
+            <input type="radio" name="part" id="part_p" value="前期" class="part"> 前期
         </label>
         <label for="part_m">
-            <input type="radio" name="part" id="part_m" value="中期"> 中期
+            <input type="radio" name="part" id="part_m" value="中期" class="part"> 中期
         </label>
         <label for="part_e">
-            <input type="radio" name="part" id="part_e" value="後期"> 後期
+            <input type="radio" name="part" id="part_e" value="後期" class="part"> 後期
         </label>
         <br>
-        <label>種類
+        <label>
+            <input type="checkbox" id="noKind"> 種類
             <select id="kind">
                 <option value="">-</option>
                 <option value="短刀">短刀</option>
@@ -83,34 +93,41 @@
             <label for="switch"></label>
         </div>
         <div id="cm">
-            <label>刃長
+            <label>
+                <input type="checkbox" id="noHatyou"> 刃長
                 <input type="number" step="0.1" id="hatyou" class="number">cm
             </label>
-            <label>全長
+            <label>
+                <input type="checkbox" id="noZentyou"> 全長
                 <input type="number" step="0.1" id="zentyou" class="number">cm
             </label>
-            <label>反り
+            <label>
+                <input type="checkbox" id="noSori"> 反り
                 <input type="number" step="0.1" id="sori" class="number">cm
             </label>
         </div>
         <div id="syaku">
-            <label>刃長
+            <label>
+                <input type="checkbox" id="noSyakuHatyou"> 刃長
                 <input type="number" step="0" id="hatyou_syaku" class="number">尺
                 <input type="number" step="0" id="hatyou_sun" class="number">寸
                 <input type="number" step="0" id="hatyou_bu" class="number">分
             </label>
-            <label>全長
+            <label>
+                <input type="checkbox" id="noSyakuZentyou"> 全長
                 <input type="number" step="0" id="zentyou_syaku" class="number">尺
                 <input type="number" step="0" id="zentyou_sun" class="number">寸
                 <input type="number" step="0" id="zentyou_bu" class="number">分
             </label>
-            <label>反り
+            <label>
+                <input type="checkbox" id="noSyakusori"> 反り
                 <input type="number" step="0" id="sori_syaku" class="number">尺
                 <input type="number" step="0" id="sori_sun" class="number">寸
                 <input type="number" step="0" id="sori_bu" class="number">分
             </label>
         </div>
-        <label>茎
+        <label>
+            <input type="checkbox" id="noNakago"> 茎
             <select id="nakago">
                 <option value="">-</option>
                 <option value="栗尻">栗尻</option>
@@ -126,7 +143,8 @@
                 <option value="卒塔婆形">卒塔婆形</option>
             </select>
         </label>
-        <label>磨上
+        <label>
+            <input type="checkbox" id="noSuriage"> 磨上
             <select id="suriage">
                 <option value="">-</option>
                 <option value="磨上">磨上</option>
@@ -136,10 +154,12 @@
                 <option value="額銘">額銘</option>
             </select>
         </label>
-        <label>目釘孔
+        <label>
+            <input type="checkbox" id="noMekugi"> 目釘孔
             <input type="number" id="mekugi" class="number">
         </label>
-        <label>切っ先
+        <label>
+            <input type="checkbox" id="noKissaki"> 切っ先
             <select id="kissaki">
                 <option value="">-</option>
                 <option value="小切っ先">小切っ先</option>
@@ -148,7 +168,8 @@
                 <option value="猪首切っ先">猪首切っ先</option>
             </select>
         </label>
-        <label>地鉄
+        <label>
+            <input type="checkbox" id="noZigane"> 地鉄
             <select id="zigane">
                 <option value="">-</option>
                 <option value="板目">板目</option>
@@ -162,7 +183,8 @@
                 <option value="縮緬">縮緬</option>
             </select>
         </label>
-        <label>帽子
+        <label>
+            <input type="checkbox" id="noBousi"> 帽子
             <select id="bousi">
                 <option value="">-</option>
                 <option value="大丸">大丸</option>
@@ -175,17 +197,18 @@
                 <option value="一枚">一枚</option>
             </select>
         </label>
-        <label>刃文</label>
         <label>
-            <input type="checkbox" id="hamon_notare" value="のたれ">のたれ</label>
+            <input type="checkbox" id="noHamon"> 刃文</label>
         <label>
-            <input type="checkbox" id="hamon_suguha" value="直刃">直刃</label>
+            <input type="checkbox" id="hamon_notare" value="のたれ" class="kaisou">のたれ</label>
         <label>
-            <input type="checkbox" id="hamon_gonome" value="互の目">互の目</label>
+            <input type="checkbox" id="hamon_suguha" value="直刃" class="kaisou">直刃</label>
         <label>
-            <input type="checkbox" id="hamon_tyouzi" value="丁子">丁子</label>
+            <input type="checkbox" id="hamon_gonome" value="互の目" class="kaisou">互の目</label>
         <label>
-            <input type="checkbox" id="hamon_hitutare" value="皆焼">皆焼</label>
+            <input type="checkbox" id="hamon_tyouzi" value="丁子" class="kaisou">丁子</label>
+        <label>
+            <input type="checkbox" id="hamon_hitutare" value="皆焼" class="kaisou">皆焼</label>
 
         <button type="button" id="go">実行</button>
         <button type="button" id="clear">クリア</button>
@@ -215,11 +238,10 @@
     </p>
     <h3>今後の予定は</h3>
     <ul>
-        <li>生成時の不要項目の設定を可能にする</li>
         <li>レスポンシブデザインでレイアウト何とかする</li>
         <li>CSV形式生成</li>
     </ul>
-
+    <hr>
     <h3>免責事項</h3>
     <h4>総則</h4>
     <p>
@@ -229,7 +251,7 @@
     </p>
     <h4>著作権について</h4>
     <p>
-        当ページの複製を禁じます。
+        当ページの複製を行い、他ユーザに対しての提供を目的とした公開を行う行為を禁じます。
         <br> 当サービスを使用し、生成した文字列につきましてはご自由にご利用ください。
     </p>
 
