@@ -470,6 +470,7 @@ function inputClear() {
     $('#hamon_gonome').prop('checked', false);
     $('#hamon_tyouzi').prop('checked', false);
     $('#hamon_hitutare').prop('checked', false);
+
 }
 
 function cpVal(target, data) {
