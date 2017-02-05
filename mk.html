@@ -21,7 +21,7 @@
 <body>
     <h1 class="wf-sawarabimincho">日本刀鑑賞情報ジェネレーターβ</h1>
     <div id="form">
-        <button type="button" id="clear">クリア</button>
+        <button type="button" id="clearTop">クリア</button>
         <br>
         <div>項目を使用しない場合は各項目のチェックボックスにチェックを入れてください。</div>
         <label>
@@ -43,10 +43,13 @@
         <label>
             <input type="checkbox" id="noToukou"> 刀工
             <input type="text" id="toukou">
+            <button type="button" id="touhaCp1">刀派をコピー</button>
         </label>
         <label>
             <input type="checkbox" id="noMei"> 銘
             <input type="text" id="mei">
+            <button type="button" id="touhaCp2">刀派をコピー</button>
+            <button type="button" id="meiCp">刀工をコピー</button>
         </label>
         <label>
             <input type="checkbox" id="noAge"> 時代
@@ -212,7 +215,7 @@
             <input type="checkbox" id="hamon_hitutare" value="皆焼" class="kaisou">皆焼</label>
 
         <button type="button" id="go">実行</button>
-        <button type="button" id="clear">クリア</button>
+        <button type="button" id="clearBottom">クリア</button>
     </div>
     <hr>
     <div id="result">
