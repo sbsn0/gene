@@ -16,37 +16,12 @@ window.addEventListener("load", function (event) {
 
     $('#syaku').hide();
 
-    $('#clear').click(function () {
-        $('#touha').val('');
-        $('#no').val('');
-        $('#toukou').val('');
-        $('#mei').val('');
-        $('#age').val('');
-        $('input[name=part]').val(['']);
-        $('#kind').val('');
-        $('#hatyou').val('');
-        $('#zentyou').val('');
-        $('#sori').val('');
-        $('#hatyou_syaku').val('');
-        $('#hatyou_sun').val('');
-        $('#hatyou_bu').val('');
-        $('#zentyou_syaku').val('');
-        $('#zentyou_sun').val('');
-        $('#zentyou_bu').val('');
-        $('#sori_syaku').val('');
-        $('#sori_sun').val('');
-        $('#sori_bu').val('');
-        $('#nakago').val('');
-        $('#suriage').val('');
-        $('#mekugi').val('');
-        $('#kissaki').val('');
-        $('#zigane').val('');
-        $('#bousi').val('');
-        $('#hamon_notare').prop('checked', false);
-        $('#hamon_suguha').prop('checked', false);
-        $('#hamon_gonome').prop('checked', false);
-        $('#hamon_tyouzi').prop('checked', false);
-        $('#hamon_hitutare').prop('checked', false);
+    $('#clearTop').click(function () {
+        inputClear();
+    })
+
+    $('#clearBottom').click(function () {
+        inputClear();
     })
 
     $('#switch').change(function () {
@@ -296,6 +271,17 @@ window.addEventListener("load", function (event) {
         }
     })
 
+    $('#touhaCp1').click(function () {
+        cpVal('toukou', 'touha')
+    })
+
+    $('#touhaCp2').click(function () {
+        cpVal('mei', 'touha')
+    })
+
+    $('#meiCp').click(function () {
+        cpVal('mei', 'toukou')
+    })
 
 }, false);
 
@@ -451,4 +437,41 @@ function getCommna(str) {
         str = str + '　'
     }
     return str;
+}
+
+function inputClear() {
+    $('#touha').val('');
+    $('#no').val('');
+    $('#toukou').val('');
+    $('#mei').val('');
+    $('#age').val('');
+    $('input[name=part]').val(['']);
+    $('#kind').val('');
+    $('#hatyou').val('');
+    $('#zentyou').val('');
+    $('#sori').val('');
+    $('#hatyou_syaku').val('');
+    $('#hatyou_sun').val('');
+    $('#hatyou_bu').val('');
+    $('#zentyou_syaku').val('');
+    $('#zentyou_sun').val('');
+    $('#zentyou_bu').val('');
+    $('#sori_syaku').val('');
+    $('#sori_sun').val('');
+    $('#sori_bu').val('');
+    $('#nakago').val('');
+    $('#suriage').val('');
+    $('#mekugi').val('');
+    $('#kissaki').val('');
+    $('#zigane').val('');
+    $('#bousi').val('');
+    $('#hamon_notare').prop('checked', false);
+    $('#hamon_suguha').prop('checked', false);
+    $('#hamon_gonome').prop('checked', false);
+    $('#hamon_tyouzi').prop('checked', false);
+    $('#hamon_hitutare').prop('checked', false);
+}
+
+function cpVal(target, data) {
+    $('#' + target).val($('#' + data).val());
 }
